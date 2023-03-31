@@ -1,0 +1,66 @@
+{
+  "version": "1.0.0",
+  "applicationId": "fb511025-9157-4694-8f36-a556e4cbab23",
+  "host": "http://localhost:5002",
+  "sources": [
+    {
+      "name": "vampi",
+      "openApi": {
+        "sourcePath": "/openapi_specs/openapi3.yml"
+      }
+    }
+  ],
+  "auths": [
+    {
+      "name": "User1",
+      "role": "reader / writer",
+      "secrets": [
+        {
+          "name": "postman",
+          "postman": {
+            "sourceInline": "{\"info\":{\"_postman_id\":\"e26ccd7c-f4f6-4091-a914-6963ff8f04e7\",\"name\":\"VAMPI Login User1\",\"schema\":\"https://schema.getpostman.com/json/collection/v2.1.0/collection.json\",\"_exporter_id\":\"20336086\"},\"item\":[{\"name\":\"Login to VAmPI\",\"request\":{\"method\":\"POST\",\"header\":[],\"body\":{\"mode\":\"raw\",\"raw\":\"{\\n  \\\"username\\\": \\\"name1\\\",\\n  \\\"password\\\": \\\"pass1\\\"\\n}\",\"options\":{\"raw\":{\"language\":\"json\"}}},\"url\":{\"raw\":\"{{vampiURL}}/users/v1/login\",\"host\":[\"{{vampiURL}}\"],\"path\":[\"users\",\"v1\",\"login\"]}},\"response\":[]}],\"event\":[{\"listen\":\"prerequest\",\"script\":{\"type\":\"text/javascript\",\"exec\":[\"\"]}},{\"listen\":\"test\",\"script\":{\"type\":\"text/javascript\",\"exec\":[\"\"]}}],\"variable\":[{\"key\":\"vampiURL\",\"value\":\"http://localhost:5002\",\"type\":\"default\"}]}",
+            "sourceBody": "$.auth_token",
+            "targetHeader": {
+              "headerKey": "Authorization",
+              "headerValueTemplate": "Bearer {}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "User 2",
+      "role": "reader / writer",
+      "secrets": [
+        {
+          "name": "postman",
+          "postman": {
+            "sourceInline": "{\"info\":{\"_postman_id\":\"132909ea-9e52-42d4-938a-c0c83d19c020\",\"name\":\"VAMPI Login User2\",\"schema\":\"https://schema.getpostman.com/json/collection/v2.1.0/collection.json\",\"_exporter_id\":\"20336086\"},\"item\":[{\"name\":\"Login to VAmPI\",\"request\":{\"method\":\"POST\",\"header\":[],\"body\":{\"mode\":\"raw\",\"raw\":\"{\\n  \\\"username\\\": \\\"name2\\\",\\n  \\\"password\\\": \\\"pass2\\\"\\n}\",\"options\":{\"raw\":{\"language\":\"json\"}}},\"url\":{\"raw\":\"{{vampiURL}}/users/v1/login\",\"host\":[\"{{vampiURL}}\"],\"path\":[\"users\",\"v1\",\"login\"]}},\"response\":[]}],\"event\":[{\"listen\":\"prerequest\",\"script\":{\"type\":\"text/javascript\",\"exec\":[\"\"]}},{\"listen\":\"test\",\"script\":{\"type\":\"text/javascript\",\"exec\":[\"\"]}}],\"variable\":[{\"key\":\"vampiURL\",\"value\":\"http://localhost:5002\",\"type\":\"default\"}]}",
+            "sourceBody": "$.auth_token",
+            "targetHeader": {
+              "headerKey": "Authorization",
+              "headerValueTemplate": "Bearer {}"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin",
+      "role": "admin",
+      "secrets": [
+        {
+          "name": "postman",
+          "postman": {
+            "sourceInline": "{\"info\":{\"_postman_id\":\"8ccee14c-3586-4f69-88a1-339b28bbdac7\",\"name\":\"VAMPI Login Admin\",\"schema\":\"https://schema.getpostman.com/json/collection/v2.1.0/collection.json\",\"_exporter_id\":\"20336086\"},\"item\":[{\"name\":\"Login to VAmPI\",\"request\":{\"method\":\"POST\",\"header\":[],\"body\":{\"mode\":\"raw\",\"raw\":\"{\\n  \\\"username\\\": \\\"admin\\\",\\n  \\\"password\\\": \\\"pass1\\\"\\n}\",\"options\":{\"raw\":{\"language\":\"json\"}}},\"url\":{\"raw\":\"{{vampiURL}}/users/v1/login\",\"host\":[\"{{vampiURL}}\"],\"path\":[\"users\",\"v1\",\"login\"]}},\"response\":[]}],\"event\":[{\"listen\":\"prerequest\",\"script\":{\"type\":\"text/javascript\",\"exec\":[\"\"]}},{\"listen\":\"test\",\"script\":{\"type\":\"text/javascript\",\"exec\":[\"\"]}}],\"variable\":[{\"key\":\"vampiURL\",\"value\":\"http://localhost:5002\",\"type\":\"default\"}]}",
+            "sourceBody": "$.auth_token",
+            "targetHeader": {
+              "headerKey": "Authorization",
+              "headerValueTemplate": "Bearer {}"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
