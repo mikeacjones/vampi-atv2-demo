@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "applicationId": "fb511025-9157-4694-8f36-a556e4cbab23",
-  "host": "http://localhost:5002",
+  "host": "http://host.docker.internal:5002",
   "sources": [
     {
       "name": "vampi",
