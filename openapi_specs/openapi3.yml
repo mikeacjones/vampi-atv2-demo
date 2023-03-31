@@ -5,7 +5,12 @@ info:
   version: '0.1'
 servers:
   - url: http://localhost:5000
-components: {}
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
 paths:
   /users/v1:
     get:
@@ -115,6 +120,8 @@ paths:
     get:
       tags:
         - users
+      security:
+        - bearerAuth: []
       summary: Retrieves user by username
       description: Displays user by username
       operationId: api_views.users.get_by_username
@@ -165,6 +172,8 @@ paths:
           required: true
           schema:
             type: string
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: Sucessfully deleted user
@@ -200,6 +209,8 @@ paths:
       summary: Update users email
       description: Update a single users email
       operationId: api_views.users.update_email
+      security:
+        - bearerAuth: []
       parameters:
         - name: username
           in: path
@@ -243,6 +254,8 @@ paths:
       summary: Update users password
       description: Update users password
       operationId: api_views.users.update_password
+      security:
+        - bearerAuth: []
       parameters:
         - name: username
           in: path
@@ -286,6 +299,8 @@ paths:
       summary: Retrieves all books
       description: Retrieves all books
       operationId: api_views.books.get_all_books
+      security:
+        - bearerAuth: []
       responses:
         '200':
           description: See all books
@@ -309,6 +324,8 @@ paths:
       summary: Add new book
       description: Add new book
       operationId: api_views.books.add_new_book
+      security:
+        - bearerAuth: []
       requestBody:
         description: >-
           Add new book with title and secret content only available to the user
@@ -360,6 +377,8 @@ paths:
         Retrieves book by title along with secret. Only the owner may retrieve
         it
       operationId: api_views.books.get_by_title
+      security:
+        - bearerAuth: []
       parameters:
         - name: book_title
           in: path
@@ -407,4 +426,3 @@ paths:
                     enum: ['fail']
                   message:
                     type: string
-
