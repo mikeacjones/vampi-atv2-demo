@@ -24,6 +24,9 @@ commands:
           name: Pull Image of Noname Scanner
           command: docker pull {NONAME_ACTIVE_IMAGE_NAME:VERSION}
       - run:
+          name: Start up vampi
+          command: docker compose up -d
+      - run:
           name: run Noname active Scanner
           command: |
             docker run \
@@ -39,6 +42,7 @@ jobs:
   noname-test:
     machine: true
     steps:
+      - checkout
       - run-scan:
           active-test-suite-id: $ACTIVE_TEST_SUITE_ID # Update with your Test Suite ID
           active-api-url: $ACTIVE_API_URL # Update with the Active Testing URI
