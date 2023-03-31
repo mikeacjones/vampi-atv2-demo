@@ -16,7 +16,7 @@ jobs:
         run: docker compose up -d
         
       - name: Test VAmPI
-        run: sleep 5 && curl http://localhost:5002/ --retry 10 --retry-delay 1  
+        run: sleep 5 && curl http://localhost:5001/ --retry 10 --retry-delay 1  
         
       - name: Docker login
         uses: docker/login-action@v1 
